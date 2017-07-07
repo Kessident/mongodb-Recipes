@@ -53,8 +53,7 @@ router.post("/ingredientEdit/:name",function (req,res) {
     ingredients.push(req.body[i]);
   }
   Recipe.update({name:req.params.name}, {$set:{ingredients: ingredients}})
-  .then(function(updated){
-    console.log(updated);
+  .then(function(){
     res.redirect("/");
   });
 });
