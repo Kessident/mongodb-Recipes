@@ -17,7 +17,7 @@ const recipeSchema = new Schema({
 });
 
 recipeSchema.virtual("allSteps").get(function () {
-  return this.steps.join("\n");
+  return this.steps.join(", ");
 });
 
 recipeSchema.virtual("allIngredients").get(function () {

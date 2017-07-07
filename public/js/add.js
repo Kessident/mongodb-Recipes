@@ -22,7 +22,7 @@ function submitRecipe(){
       }),
       redirect:"follow"
     });
-
+  mainForm.submit();
   fetch(request).then(function (res) {
     window.location.replace(res.url);
   });
