@@ -1,0 +1,18 @@
+{{#recipes}}
+<ul>Recipe name: {{name}}
+  <li>Prep Time: {{prepTime}} minutes</li>
+  <li>Cook Time: {{cookTime}} minutes</li>
+  <li>Steps: {{allSteps}}</li>
+  <ul>
+    {{#ingredients}}
+    <li>Ingredients: {{allIngredients}}</li>
+    {{/ingredients}}
+  </ul>
+  <li>Source: {{source}}</li>
+</ul>
+<form action="/changeRecipe" method="post">
+  <button type="submit" name="edit" value={{name}}>Edit</button>
+  <button type="submit" name="delete" value={{name}}>Remove</button>
+</form>
+{{/recipes}}
+<script type="text/javascript" src="/public/js/view.js"></script>

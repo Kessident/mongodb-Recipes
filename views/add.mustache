@@ -1,0 +1,28 @@
+{{#recipe}}
+<h1>Recipe for {{name}}</h1>
+<form name="main" method="post" action="/add">
+  <input type="text" name="name" placeholder="Name" value="{{name}}"><br>
+  <input type="number" name="prepTime" placeholder="Prep Time (in minutes)" value="{{prepTime}}"><br>
+  <input type="number" name="cookTime" placeholder="Cook Time (in minutes)" value="{{cookTime}}"><br>
+  <textarea name="ingredients" rows="4" cols="30" placeholder="Ingredients&#13;&#10;# 'measure' of 'ingredient'">{{#ingredients}}{{.}}{{/ingredients}}</textarea><br>
+  <textarea name="steps" rows="8" cols="80">{{#steps}}{{.}}{{/steps}}</textarea><br>
+
+  <input type="text" name="source" placeholder="Recipe Source" value="{{source}}"><br>
+  <button type="submit">Submit Recipe</button>
+</form>
+{{/recipe}}
+
+{{^recipe}}
+<h1>Recipe</h1>
+<form name="main" method="post" action="/add">
+  <input type="text" name="name" placeholder="Name"><br>
+  <input type="number" name="prepTime" placeholder="Prep Time (in minutes)"><br>
+  <input type="number" name="cookTime" placeholder="Cook Time (in minutes)"><br>
+  <textarea name="ingredients" rows="4" cols="30" placeholder="Ingredients&#13;&#10;# 'measure' of 'ingredient'"></textarea><br>
+  <textarea name="steps" rows="8" cols="80"></textarea><br>
+
+  <input type="text" name="source" placeholder="Recipe Source" value="{{source}}"><br>
+  <button type="submit">Submit Recipe</button>
+</form>
+{{/recipe}}
+<script type="text/javascript" src="/public/js/add.js"></script>
