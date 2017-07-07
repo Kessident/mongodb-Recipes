@@ -7,7 +7,11 @@ const recipeSchema = new Schema({
   name: {type:String, required:true, unique:true},
   prepTime: Number,
   cookTime: Number,
-  ingredients: [String],
+  ingredients: [{
+    amount:{type: Number, default:1},
+    measure:String,
+    ingredient:String
+  }],
   steps: [String],
   source: String
 });
